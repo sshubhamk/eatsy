@@ -2,8 +2,8 @@
 .nav-items,
 ul,
 li {
-  color: var(--primary);
-  background-color: var(--light-blue);
+  color: var(--light-blue);
+  background-color: var(--primary);
 }
 
 .logo-block {
@@ -35,4 +35,10 @@ ul {
 
 ul > li {
   cursor: pointer;
+}
+
+a {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: inline-block;
 }

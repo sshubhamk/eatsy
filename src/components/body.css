@@ -4,17 +4,42 @@
 
 .search-block {
   display: flex;
-  width: 20dvw;
+  width: 98%;
+  padding: 1rem;
   justify-content: center;
   align-items: center;
 }
 
 .search {
-  width: 100%;
+  width: 40%;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 14px;
 }
 
 .restaurant-cards {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.load-more {
+  height: 4dvh;
+  margin: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.load-more > span {
+  padding: 1rem 5rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 14px;
+}
+
+.load-more > span:hover {
+  box-shadow: rgba(0, 0, 0, 0.148) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.147) 0px 4px 6px -2px;
+  transition: all 500ms ease-out;
 }

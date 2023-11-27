@@ -1,8 +1,7 @@
-import './nav-bar.css';
+import './NavBar.css';
 import logo from '../assets/images/logo.svg';
 
-
-export const NavBar = () => {
+const NavBar = () => {
   // const nav_menu = ['Home', 'Restaurants', 'About Us', 'Contact'];
   return (
     <div className="nav-container">
@@ -12,12 +11,30 @@ export const NavBar = () => {
 
       <div className="nav-items">
         <ul>
-          <li> Home </li>
-          <li> Restaurants </li>
-          <li> Contact </li>
-          <li> Cart </li>
+          <li>
+            <a href='/'>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href='/offers-near-me'>
+              Offers
+            </a>
+          </li>
+          <li>
+            <a href='/contact'>
+              Contact
+            </a>
+          </li>
+          <li>
+            <a href='/cart'>
+              Cart
+            </a>
+          </li>
         </ul>
       </div>
     </div>
   );
 }
+
+export default NavBar;

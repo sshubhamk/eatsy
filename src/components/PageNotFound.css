@@ -1,0 +1,28 @@
+.main {
+  height: 90dvh;
+}
+
+.four_zero_four_bg {
+  height: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("../assets/gif/404.gif");
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+  text-align: center;
+}
+
+.link_404 {
+  color: #fff;
+  padding: 10px 20px;
+  background: var(--primary);
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.text-center {
+  width: 100%;
+  text-align: center;
+}
