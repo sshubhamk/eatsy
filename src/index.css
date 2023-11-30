@@ -8,7 +8,9 @@ body {
 * {
   margin: 0;
   padding: 0;
+  letter-spacing: 0.2px;
   font-family: "Poppins", sans-serif;
+  color: var(--primary);
   --white: #f9f7f7;
   --light-blue: #dbe2ef;
   --secondary: #3f72af;
@@ -30,6 +32,7 @@ body {
   margin: 1rem;
   width: 250px;
   border-radius: 14px;
+  color: var(--primary);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -40,13 +43,17 @@ body {
   background-color: var(--light-blue);
 }
 
+.restaurant-card > p {
+  text-transform: capitalize;
+}
+
 .bold-text {
   font-weight: 600;
 }
 
 .small-text {
-  font-size: 14px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: normal;
 }
 
 .res-img {

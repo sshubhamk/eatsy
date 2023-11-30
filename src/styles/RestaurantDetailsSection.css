@@ -1,0 +1,44 @@
+.res-details-section,
+.res-offers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.res-details {
+  width: 50%;
+  margin-top: 5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.res-details > .res-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.res-details > p {
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.res-ratings {
+  float: inline-end;
+  color: #3a8e2f;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #c4c4c4;
+}
+
+.res-ratings > span {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--primary);
+  padding-top: 8px;
+  border-top: 1px solid #c4c4c4;
+}

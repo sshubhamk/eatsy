@@ -1,8 +1,9 @@
 import RestaurantCards from './RestaurantCards';
 import { useEffect, useState, useRef, useCallback } from 'react';
-import './Body.css';
+import '../styles/Body.css';
 import downArrow from '../assets/images/downArrow.svg';
 import Shimmer from './Shimmer';
+import * as ENDPOINT from '../constants/api';
 
 const debounce = (func, wait) => {
   let timeout;
@@ -15,28 +16,26 @@ const debounce = (func, wait) => {
 const Body = () => {
   const [restaurantData, setRestaurantData] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
-  const [pageCount, setPageCount] = useState(10);
+  const [pageCount, setPageCount] = useState(0);
   const [nextOffset, setnextOffset] = useState('');
   const [cardIndex, setCardIndex] = useState(1);
   const inputElem = useRef(null);
-  const proxy_url = 'https://corsproxy.io/?';
-  const swiggy_url = 'https://www.swiggy.com/';
 
   useEffect(() => {
     fetchRestaurantData();
   }, []);
 
   const fetchRestaurantData = async () => {
-    const url = `${proxy_url}${swiggy_url}api/seo/getListing?lat=19.0759837&lng=72.8776559`;
-    const data = !restaurantData.length ? await fetch(url) : await fetch(url, {
-      method: 'POST',
-      body: restaurantData.length && JSON.stringify({
-        nextOffset: nextOffset,
-        widgetOffset: {
-          collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: pageCount
-        }
-      })
-    });
+    const data = !restaurantData.length ? await fetch(ENDPOINT.LIST_URL) :
+      await fetch(ENDPOINT.LIST_URL, {
+        method: 'POST',
+        body: restaurantData.length && JSON.stringify({
+          nextOffset: nextOffset,
+          widgetOffset: {
+            collectionV5RestaurantListWidget_SimRestoRelevance_food_seo: pageCount
+          }
+        })
+      });
     const jsonData = await data.json();
     setnextOffset(jsonData?.data?.success?.pageOffset?.nextOffset);
     setPageCount(jsonData?.data?.success?.pageOffset?.widgetOffset?.collectionV5RestaurantListWidget_SimRestoRelevance_food_seo);
@@ -48,7 +47,7 @@ const Body = () => {
   const fetchSearchResults = async inputVal => {
     try {
       if (inputVal.length) {
-        const url = `${proxy_url}${swiggy_url}dapi/restaurants/search/suggest?lat=19.2133035606211&lng=72.87611371920241&str=${inputVal}`;
+        const url = `${ENDPOINT.SEARCH_URL}${inputVal}`;
         const results = await fetch(url);
         const suggestions = await results.json();
         setSearchResults(suggestions.data.suggestions);
@@ -65,7 +64,8 @@ const Body = () => {
     <div className="main-body">
       <div className="search-block">
         <input type="text" className="search mr-2" name="search" ref={inputElem}
-          placeholder="Search Restaurant, Food, Desset, etc" onChange={() => handleSearch(inputElem.current?.value)} />
+          placeholder="Search Restaurant, Food, Dessert, etc"
+          onChange={() => handleSearch(inputElem.current?.value)} />
         <button className="primary-btn" name='search-btn'
           onClick={() => handleSearch(inputElem.current?.value)}> Search </button>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Body from './components/Body';
 import PageNotFound from './components/PageNotFound';
 import Contact from './components/Contact';
 import Offers from './components/Offers';
@@ -9,25 +9,37 @@ import Cart from './components/Cart';
 import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import { createBrowserRouter } from 'react-router-dom';
+import App from './App';
+import RestaurantMenu from './components/RestaurantMenu';
 
 const appRouter = createBrowserRouter([
   {
-    path: '',
+    path: '/',
     element: <App />,
-    errorElement: <PageNotFound />
+    children: [
+      {
+        path: '/',
+        element: <Body />,
+      },
+      {
+        path: 'offers-near-me',
+        element: <Offers />
+      },
+      {
+        path: 'contact-us',
+        element: <Contact />
+      },
+      {
+        path: 'cart',
+        element: <Cart />
+      },
+      {
+        path: 'restaurant-menu/:id',
+        element: <RestaurantMenu />
+      }
+    ],
+    errorElement: <PageNotFound />,
   },
-  {
-    path: 'offers-near-me',
-    element: <Offers />
-  },
-  {
-    path: 'contact',
-    element: <Contact />
-  },
-  {
-    path: 'cart',
-    element: <Cart />
-  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

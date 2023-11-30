@@ -1,7 +1,7 @@
 import React from 'react'
-import './Body.css';
-import './NavBar.css';
-import './Shimmer.css';
+import '../styles/Body.css';
+import '../styles/NavBar.css';
+import '../styles/Shimmer.css';
 
 const Shimmer = () => {
 
