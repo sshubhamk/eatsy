@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   letter-spacing: 0.2px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   color: var(--primary);
   --white: #f9f7f7;
   --light-blue: #dbe2ef;
@@ -33,8 +33,8 @@ body {
   width: 250px;
   border-radius: 14px;
   color: var(--primary);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
 }
 
 .restaurant-card:hover {
@@ -49,6 +49,7 @@ body {
 
 .bold-text {
   font-weight: 600;
+  font-size: 18px;
 }
 
 .small-text {
@@ -81,4 +82,14 @@ body {
 a {
   color: var(--light-blue);
   text-decoration: none;
+}
+
+.ratings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0.2rem 0;
+  text-transform: lowercase !important;
 }

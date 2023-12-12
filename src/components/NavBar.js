@@ -14,7 +14,7 @@ const NavBar = () => {
         <ul>
           {Routes.map((item) => (
             <li key={item.id}>
-              <Link to={item.path}>{item.title}</Link>
+              <Link className='nav-title' to={item.path}>{item.title}</Link>
             </li>
           ))}
         </ul>

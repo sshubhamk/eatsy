@@ -10,7 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import { RouterProvider } from 'react-router-dom';
 import { createBrowserRouter } from 'react-router-dom';
 import App from './App';
-import RestaurantMenu from './components/RestaurantMenu';
+import RestaurantMenuPage from './components/RestaurantMenuPage';
 
 const appRouter = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: 'restaurant-menu/:id',
-        element: <RestaurantMenu />
+        element: <RestaurantMenuPage />
       }
     ],
     errorElement: <PageNotFound />,

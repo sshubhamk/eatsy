@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import * as ENDPOINTS from '../constants/api';
 import RestaurantDetailsSection from "./RestaurantDetailsSection";
 
-const RestaurantMenu = () => {
+const RestaurantMenuPage = () => {
   const id = useParams().id;
   const [restaurantMenuData, setRestaurantMenuData] = useState([]);
 
@@ -15,8 +15,6 @@ const RestaurantMenu = () => {
     const menuData = await fetch(`${ENDPOINTS.RESTAURANT_BY_ID_URL}${id}`);
     const convertToJson = await menuData.json();
     setRestaurantMenuData([...convertToJson?.data?.cards]);
-    console.log(restaurantMenuData);
-    console.log(convertToJson?.data?.cards);
   }
 
   if (restaurantMenuData.length) return (
@@ -26,4 +24,4 @@ const RestaurantMenu = () => {
   )
 }
 
-export default RestaurantMenu;
+export default RestaurantMenuPage;

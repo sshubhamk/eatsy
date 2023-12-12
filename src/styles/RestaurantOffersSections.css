@@ -1,0 +1,28 @@
+.offer {
+  width: 100%;
+  max-width: 230px;
+  min-width: max-content;
+  padding: 8px;
+  border-radius: 10px;
+  margin-right: 20px;
+  border: 1px solid #e9e9eb;
+}
+
+.offer-header > img {
+  height: 20px;
+  margin-right: 8px;
+}
+
+.offer-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.offer-code {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 6px;
+}

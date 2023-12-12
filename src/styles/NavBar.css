@@ -1,19 +1,13 @@
-.logo-block,
-.nav-items,
-ul,
-li {
-  color: var(--light-blue);
-  background-color: var(--primary);
-}
-
 .logo-block {
-  padding: 0.5rem 1rem;
+  width: 25%;
+  padding: 0.5rem 2rem;
 }
 
 .nav-container {
   display: flex;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
-    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  background-color: var(--light-blue);
+  /* box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px; */
 }
 
 .nav-items {
@@ -37,8 +31,11 @@ ul > li {
   cursor: pointer;
 }
 
-a {
+.nav-title {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   display: inline-block;
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 700;
 }
