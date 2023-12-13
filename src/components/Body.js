@@ -76,9 +76,9 @@ const Body = () => {
         ))}
         {restaurantData?.length ?
           <div className='load-more'>
-            <span onClick={fetchRestaurantData}>Show more
+            <p onClick={fetchRestaurantData}>Show more
               <img src={downArrow} alt='show-more' />
-            </span>
+            </p>
           </div> : ''}
       </div>
     </div>

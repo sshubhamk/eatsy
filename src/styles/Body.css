@@ -23,7 +23,7 @@
 }
 
 .load-more {
-  height: 4dvh;
+  height: 2dvh;
   margin: 1rem 0;
   width: 100%;
   display: flex;
@@ -31,15 +31,21 @@
   align-items: center;
 }
 
-.load-more > span {
-  padding: 1rem 5rem;
+.load-more > p {
+  padding: 1rem 1.5rem;
   font-weight: 500;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 14px;
 }
 
-.load-more > span:hover {
+.load-more > p:hover {
+  background-color: var(--light-blue);
   box-shadow: rgba(0, 0, 0, 0.148) 0px 10px 15px -3px,
     rgba(0, 0, 0, 0.147) 0px 4px 6px -2px;
-  transition: all 500ms ease-out;
+}
+.load-more > p > img {
+  margin-left: 0.5rem;
 }
