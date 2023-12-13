@@ -17,9 +17,9 @@ const RestaurantMenus = ({ props }) => {
           <img src={bestSellerImg} alt="" />
           <span>{menu?.ribbon?.text}</span>
         </div>
-      )
+      );
     }
-  }
+  };
 
   return (
     <div className='res-menu'>
@@ -30,7 +30,7 @@ const RestaurantMenus = ({ props }) => {
         </p>
         <span>
           {menu?.name}
-          <img src={menuImg} alt={menuImg} />
+          {menu?.imageId && <img src={menuImg} alt={menuImg} />}
         </span>
         {/* <button>Add</button> */}
       </div>
@@ -41,7 +41,7 @@ const RestaurantMenus = ({ props }) => {
         <p> {menu?.description} </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default RestaurantMenus;
